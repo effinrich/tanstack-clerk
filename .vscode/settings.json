@@ -7,5 +7,132 @@
   },
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": "explicit",
+    "source.fixAll.oxc": "explicit"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/CVS": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": false,
+    "**/.factorypath": true,
+    "**/.wrangler": true,
+    "**/migrations": false,
+    "**/node_modules": false,
+    "**/tsconfig.json": false,
+    "**/wrangler.toml": false,
+    "**/.prettierrc": false,
+    "**/.watchmanconfig": true,
+    "**/tsconfig.base.json": false,
+    "**/.gitignore": true,
+    "**/types": false,
+    "**/dist": false,
+    "apps/expo/index.js": false,
+    "**/metro.config.js": false,
+    "**/eas.json": false,
+    "**/tamagui.config.ts": false,
+    "**/babel.config.js": false,
+    "**/.expo": false,
+    "**/.next": true,
+    "**/.tamagui": false,
+    "**/.eslintrc.js": false,
+    "**/next-env.d.ts": true,
+    "**/.vscode": false,
+    "**/.turbo": false,
+    "**/out": false,
+    "SECURITY.md": true,
+    "LICENSE": true,
+    ".gitpod.yml": true,
+    ".npmrc": false,
+    "bun-workspace.yaml": false,
+    "renovate.json": true,
+    "turbo.json": false,
+    "**/cfImageLoader.js": true,
+    "**/sw.js": true,
+    "**/tamagui.css": false,
+    "apps/next/public/*.js": false,
+    "**/expo-env.d.ts": false,
+    "**/generate-tamagui-json.js": false,
+    "apps/docs/public/*.js": false,
+    "**/.eslintrc.json": false,
+    "**/.vscodeignore": false
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "mdx.experimentalLanguageServer": true,
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/package.json"
+      ],
+      "url": "https://json.schemastore.org/package",
+      "schema": true
+    }
+  ],
+  "vitest.disableWorkspaceWarning": true,
+  "emmet.showExpandedAbbreviation": "never",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "[css]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[graphql]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[handlebars]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[vue-html]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   }
 }
