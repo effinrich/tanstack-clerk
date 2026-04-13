@@ -1,55 +1,55 @@
-import { createServerFn } from '@tanstack/react-start'
-import { createFileRoute, useRouter } from '@tanstack/react-router'
+import { createFileRoute, useRouter } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
-import { getClient } from '#/db'
+import { getClient } from "#/db";
 
 const getTodos = createServerFn({
-  method: 'GET',
+  method: "GET",
 }).handler(async () => {
-  const client = await getClient()
+  const client = await getClient();
   if (!client) {
-    return undefined
+    return undefined;
   }
   return (await client.query(`SELECT * FROM todos`)) as Array<{
-    id: number
-    title: string
-  }>
-})
+    id: number;
+    title: string;
+  }>;
+});
 
 const insertTodo = createServerFn({
-  method: 'POST',
+  method: "POST",
 })
   .inputValidator((d: { title: string }) => d)
   .handler(async ({ data }) => {
-    const client = await getClient()
+    const client = await getClient();
     if (!client) {
-      return undefined
+      return undefined;
     }
-    await client.query(`INSERT INTO todos (title) VALUES ($1)`, [data.title])
-  })
+    await client.query(`INSERT INTO todos (title) VALUES ($1)`, [data.title]);
+  });
 
-export const Route = createFileRoute('/demo/neon')({
+export const Route = createFileRoute("/demo/neon")({
   component: App,
   loader: async () => {
-    const todos = await getTodos()
-    return { todos }
+    const todos = await getTodos();
+    return { todos };
   },
-})
+});
 
 function App() {
-  const { todos } = Route.useLoaderData()
-  const router = useRouter()
+  const { todos } = Route.useLoaderData();
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const formData = new FormData(e.target as HTMLFormElement)
-    const data = Object.fromEntries(formData)
-    await insertTodo({ data: { title: data.title as string } })
-    router.invalidate()
-  }
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    await insertTodo({ data: { title: data.title as string } });
+    router.invalidate();
+  };
 
   if (!todos) {
-    return <DBConnectionError />
+    return <DBConnectionError />;
   }
 
   return (
@@ -57,7 +57,7 @@ function App() {
       className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 to-blue-100 p-4 text-white"
       style={{
         backgroundImage:
-          'radial-gradient(circle at 5% 40%, #63F655 0%, #00E0D9 40%, #1a0f0a 100%)',
+          "radial-gradient(circle at 5% 40%, #63F655 0%, #00E0D9 40%, #1a0f0a 100%)",
       }}
     >
       <div className="w-full max-w-2xl p-8 rounded-xl backdrop-blur-md bg-black/50 shadow-xl border-8 border-black/10">
@@ -111,7 +111,7 @@ function App() {
         )}
       </div>
     </div>
-  )
+  );
 }
 
 function DBConnectionError() {
@@ -143,8 +143,8 @@ function DBConnectionError() {
               1
             </span>
             <div>
-              Use the{' '}
-              <code className="bg-black/30 px-2 py-1 rounded">db/init.sql</code>{' '}
+              Use the{" "}
+              <code className="bg-black/30 px-2 py-1 rounded">db/init.sql</code>{" "}
               file to create the database
             </div>
           </li>
@@ -153,10 +153,10 @@ function DBConnectionError() {
               2
             </span>
             <div>
-              Set the{' '}
+              Set the{" "}
               <code className="bg-black/30 px-2 py-1 rounded">
                 DATABASE_URL
-              </code>{' '}
+              </code>{" "}
               environment variable to the connection string of your Neon
               database
             </div>
@@ -164,5 +164,5 @@ function DBConnectionError() {
         </ul>
       </div>
     </div>
-  )
+  );
 }

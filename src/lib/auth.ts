@@ -1,5 +1,5 @@
-import { betterAuth } from 'better-auth'
-import { tanstackStartCookies } from 'better-auth/tanstack-start'
+import { betterAuth } from "better-auth";
+import { tanstackStartCookies } from "better-auth/tanstack-start";
 import { Pool } from "pg";
 
 export const auth = betterAuth({
@@ -10,4 +10,4 @@ export const auth = betterAuth({
     enabled: true,
   },
   plugins: [tanstackStartCookies()],
-})
+});
